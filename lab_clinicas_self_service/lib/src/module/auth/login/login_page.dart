@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lab_clinicas_core/lab_clinicas_core.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -26,7 +27,10 @@ class LoginPage extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  const Text('login'),
+                  const Text(
+                    'login',
+                    style: LabClinicasTheme.titleStyle,
+                  ),
                   const SizedBox(
                     height: 32,
                   ),
