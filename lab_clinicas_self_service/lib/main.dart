@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_getit/flutter_getit.dart';
 import 'package:lab_clinicas_core/lab_clinicas_core.dart';
@@ -6,7 +8,9 @@ import 'package:lab_clinicas_self_service/src/module/auth/auth_module.dart';
 import 'package:lab_clinicas_self_service/src/pages/splash_page/splash_page.dart';
 
 void main() {
-  runApp(const LabClinicasSelfServiceApp());
+  runZonedGuarded(() => null, (error, stack) {
+    runApp(const LabClinicasSelfServiceApp());
+  });
 }
 
 class LabClinicasSelfServiceApp extends StatelessWidget {
