@@ -30,7 +30,7 @@ class _LoginPageState extends State<LoginPage> {
           constraints: BoxConstraints(minHeight: sizeOf.height),
           decoration: const BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('assets/login/background_login.png'),
+              image: AssetImage('assets/images/background_login.png'),
               fit: BoxFit.cover,
             ),
           ),
@@ -82,9 +82,10 @@ class _LoginPageState extends State<LoginPage> {
                       height: 48,
                       child: ElevatedButton(
                         onPressed: () {
-                          final valid = formKey.currentState?.validate() ?? false;
+                          final valid =
+                              formKey.currentState?.validate() ?? false;
 
-                          if (valid){}
+                          if (valid) {}
                         },
                         child: const Text('Entrar'),
                       ),

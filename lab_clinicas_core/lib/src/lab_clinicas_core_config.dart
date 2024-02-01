@@ -35,12 +35,12 @@ class LabClinicasCoreConfig extends StatelessWidget {
             return MaterialApp(
               theme: LabClinicasTheme.lightTheme,
               darkTheme: LabClinicasTheme.darkTheme,
-              navigatorObservers: [
-                navigatorObserver,
-                flutterGetItNavObserver,
-              ],
               routes: routes,
               title: title,
+              navigatorObservers: [
+                flutterGetItNavObserver,
+                navigatorObserver,
+              ],
             );
           },
         );
