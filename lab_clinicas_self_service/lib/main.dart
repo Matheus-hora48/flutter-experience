@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_getit/flutter_getit.dart';
 import 'package:lab_clinicas_core/lab_clinicas_core.dart';
+import 'package:lab_clinicas_self_service/src/binding/lab_clinicas_aplication_binding.dart';
+import 'package:lab_clinicas_self_service/src/module/auth/auth_module.dart';
 import 'package:lab_clinicas_self_service/src/pages/splash_page/splash_page.dart';
 
 void main() {
@@ -14,11 +16,12 @@ class LabClinicasSelfServiceApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return LabClinicasCoreConfig(
       title: 'Lab Clinicas Auto Atendimento',
+      binding: LabClinicasAplicationBinding(),
       pagesbuilders: [
-        FlutterGetItPageBuilder(
-          page: (_) => const SplashPage(),
-          path: '/',
-        )
+        FlutterGetItPageBuilder(page: (_) => const SplashPage(), path: '/'),
+      ],
+      modules: [
+        AuthModule(),
       ],
     );
   }

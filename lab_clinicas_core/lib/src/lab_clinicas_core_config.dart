@@ -25,7 +25,6 @@ class LabClinicasCoreConfig extends StatelessWidget {
     return FlutterGetIt(
       debugMode: kDebugMode,
       bindings: binding,
-      bindingsBuilder: () => [],
       pages: [...pages ?? [], ...pagesbuilders ?? []],
       builder: (context, routes, flutterGetItNavObserver) {
         return AsyncStateBuilder(
