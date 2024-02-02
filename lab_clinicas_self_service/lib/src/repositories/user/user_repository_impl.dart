@@ -16,7 +16,7 @@ class UserRepositoryImpl implements UserRepository {
   ) async {
     try {
       final Response(data: {'access_token': accessToken}) =
-          await restClient.unAuth.post('/auth', data: {
+          await restClient.unAuth.post('http://192.168.1.65:8080/auth', data: {
         'email': email,
         'password': password,
         'admin': true,

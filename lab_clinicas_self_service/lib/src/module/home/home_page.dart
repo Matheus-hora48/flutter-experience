@@ -41,6 +41,7 @@ class HomePage extends StatelessWidget {
             ),
           ),
           child: Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
               const Text(
                 'Bem Vindo!',
