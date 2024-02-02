@@ -1,15 +1,21 @@
 import 'dart:async';
+import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_getit/flutter_getit.dart';
 import 'package:lab_clinicas_core/lab_clinicas_core.dart';
 import 'package:lab_clinicas_self_service/src/binding/lab_clinicas_aplication_binding.dart';
 import 'package:lab_clinicas_self_service/src/module/auth/auth_module.dart';
+import 'package:lab_clinicas_self_service/src/module/home/home_module.dart';
 import 'package:lab_clinicas_self_service/src/pages/splash_page/splash_page.dart';
 
 void main() {
-  runZonedGuarded(() => null, (error, stack) {
-    runApp(const LabClinicasSelfServiceApp());
+  runZonedGuarded(
+      () => {
+            runApp(const LabClinicasSelfServiceApp()),
+          }, (error, stack) {
+    log('Erro não trtado', error: error, stackTrace: stack);
+    throw error;
   });
 }
 
@@ -26,6 +32,7 @@ class LabClinicasSelfServiceApp extends StatelessWidget {
       ],
       modules: [
         AuthModule(),
+        HomeModule(),
       ],
     );
   }
