@@ -5,8 +5,8 @@ class SelfServiceModel {
   final String? lastName;
 
   SelfServiceModel({
-    required this.name,
-    required this.lastName,
+    this.name,
+    this.lastName,
   });
 
   SelfServiceModel clear() {

@@ -32,6 +32,7 @@ final class LabClinicasTheme {
         color: blueColor,
         fontWeight: FontWeight.w600,
       ),
+      border: _defaultInputBorder,
       enabledBorder: _defaultInputBorder,
       focusedBorder: _defaultInputBorder,
       errorBorder: _defaultInputBorder.copyWith(
@@ -73,6 +74,7 @@ final class LabClinicasTheme {
         color: blueColor,
         fontWeight: FontWeight.w600,
       ),
+      border: _defaultInputBorder,
       enabledBorder: _defaultInputBorder,
       focusedBorder: _defaultInputBorder,
       errorBorder: _defaultInputBorder.copyWith(
