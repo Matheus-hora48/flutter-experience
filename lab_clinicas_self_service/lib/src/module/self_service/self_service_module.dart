@@ -1,20 +1,21 @@
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_getit/flutter_getit.dart';
 import 'package:lab_clinicas_self_service/src/module/self_service/documents/documents_page.dart';
 import 'package:lab_clinicas_self_service/src/module/self_service/documents/scan/documents_scan_page.dart';
 import 'package:lab_clinicas_self_service/src/module/self_service/documents/scan_confirm/documents_scan_confirm_page.dart';
 import 'package:lab_clinicas_self_service/src/module/self_service/done/done_page.dart';
-import 'package:lab_clinicas_self_service/src/module/self_service/find_patient/find_patient_page.dart';
 import 'package:lab_clinicas_self_service/src/module/self_service/find_patient/find_patient_router.dart';
 import 'package:lab_clinicas_self_service/src/module/self_service/patient/patient_page.dart';
 import 'package:lab_clinicas_self_service/src/module/self_service/self_service_controller.dart';
 import 'package:lab_clinicas_self_service/src/module/self_service/self_service_page.dart';
 import 'package:lab_clinicas_self_service/src/module/self_service/who_i_am/who_i_am_page.dart';
+import 'package:lab_clinicas_self_service/src/repositories/patients/patients_repository_impl.dart';
 
 class SelfServiceModule extends FlutterGetItModule {
   @override
   List<Bind<Object>> get bindings => [
         Bind.lazySingleton((i) => SelfServiceController()),
+        Bind.lazySingleton((i) => PatientsRepositoryImpl(restClient: i()))
       ];
 
   @override
