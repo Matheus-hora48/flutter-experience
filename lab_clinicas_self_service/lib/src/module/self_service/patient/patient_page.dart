@@ -36,7 +36,7 @@ class _PatientPageState extends State<PatientPage>
     enabledForm = !patientFound;
     initializeForm(patient);
     effect(() {
-      if(controller.nextStep){
+      if (controller.nextStep) {
         selfServiceController.updatePatientAndGoDocument(controller.patient);
       }
     });
@@ -318,11 +318,17 @@ class _PatientPageState extends State<PatientPage>
                           final valid =
                               formKey.currentState?.validate() ?? false;
                           if (valid) {
-                            controller.updateAndNext(
-                              updatePatient(
-                                selfServiceController.model.patient!,
-                              ),
-                            );
+                            if (patientFound) {
+                              controller.updateAndNext(
+                                updatePatient(
+                                  selfServiceController.model.patient!,
+                                ),
+                              );
+                            } else {
+                              controller.saveAndNext(
+                                createPatientRegister(),
+                              );
+                            }
                           }
                         },
                         child: Visibility(
@@ -354,7 +360,11 @@ class _PatientPageState extends State<PatientPage>
                           child: SizedBox(
                             height: 48,
                             child: ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                controller.patient =
+                                    selfServiceController.model.patient;
+                                controller.goNextStep();
+                              },
                               child: const Text('CONTINUAR'),
                             ),
                           ),
