@@ -42,4 +42,9 @@ class SelfServiceController with MessageStateMixin {
     _step.forceUpdate(FormSteps.restart);
     clearForm();
   }
+
+  void updatePatientAndGoDocument(PatientsModel? patient) {
+    _model = _model.copyWith(patient: () => patient);
+    _step.forceUpdate(FormSteps.documents);
+  }
 }

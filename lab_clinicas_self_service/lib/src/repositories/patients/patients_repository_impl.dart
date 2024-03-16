@@ -19,15 +19,29 @@ class PatientsRepositoryImpl implements PatientsRepository {
           await restClient.auth.get('/patients', queryParameters: {
         'document': document,
       });
-    
-    if (data.isEmpty) {
-      return Right(null);
-    }
 
-    return Right(PatientsModel.fromJson(data.first));
+      if (data.isEmpty) {
+        return Right(null);
+      }
 
+      return Right(PatientsModel.fromJson(data.first));
     } on DioException catch (e, s) {
       log('Erro ao buscar paciente por cpf', error: e, stackTrace: s);
+      return Left(RepositoryException());
+    }
+  }
+
+  @override
+  Future<Either<RepositoryException, Unit>> update(
+      PatientsModel patient) async {
+    try {
+      await restClient.auth.put(
+        '/patients/${patient.id}',
+        data: patient.toJson(),
+      );
+      return Right(unit);
+    } on DioException catch (e, s) {
+      log('Erro ao atualizar o paciente', error: e, stackTrace: s);
       return Left(RepositoryException());
     }
   }

@@ -1,4 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:json_annotation/json_annotation.dart';
 
 part 'patient_address_model.g.dart';
@@ -29,4 +28,24 @@ class PatientAddressModel {
       _$PatientAddressModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$PatientAddressModelToJson(this);
+
+  PatientAddressModel copyWith({
+    String? cep,
+    String? streetAddress,
+    String? number,
+    String? addressComplement,
+    String? state,
+    String? city,
+    String? district,
+  }) {
+    return PatientAddressModel(
+      cep: cep ?? this.cep,
+      streetAddress: streetAddress ?? this.streetAddress,
+      number: number ?? this.number,
+      addressComplement: addressComplement ?? this.addressComplement,
+      state: state ?? this.state,
+      city: city ?? this.city,
+      district: district ?? this.district,
+    );
+  }
 }
