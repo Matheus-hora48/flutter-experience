@@ -2,7 +2,6 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_getit/flutter_getit.dart';
 import 'package:lab_clinicas_self_service/src/module/self_service/documents/documents_page.dart';
 import 'package:lab_clinicas_self_service/src/module/self_service/documents/scan/documents_scan_page.dart';
-import 'package:lab_clinicas_self_service/src/module/self_service/documents/scan_confirm/documents_scan_confirm_page.dart';
 import 'package:lab_clinicas_self_service/src/module/self_service/documents/scan_confirm/documents_scan_confirm_router.dart';
 import 'package:lab_clinicas_self_service/src/module/self_service/done/done_page.dart';
 import 'package:lab_clinicas_self_service/src/module/self_service/find_patient/find_patient_router.dart';
