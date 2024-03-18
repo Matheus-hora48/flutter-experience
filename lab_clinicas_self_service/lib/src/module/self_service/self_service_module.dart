@@ -9,13 +9,20 @@ import 'package:lab_clinicas_self_service/src/module/self_service/patient/patien
 import 'package:lab_clinicas_self_service/src/module/self_service/self_service_controller.dart';
 import 'package:lab_clinicas_self_service/src/module/self_service/self_service_page.dart';
 import 'package:lab_clinicas_self_service/src/module/self_service/who_i_am/who_i_am_page.dart';
+import 'package:lab_clinicas_self_service/src/repositories/information_form/information_form_repository.dart';
+import 'package:lab_clinicas_self_service/src/repositories/information_form/information_form_repository_impl.dart';
+import 'package:lab_clinicas_self_service/src/repositories/patients/patients_repository.dart';
 import 'package:lab_clinicas_self_service/src/repositories/patients/patients_repository_impl.dart';
 
 class SelfServiceModule extends FlutterGetItModule {
   @override
   List<Bind<Object>> get bindings => [
-        Bind.lazySingleton((i) => SelfServiceController()),
-        Bind.lazySingleton((i) => PatientsRepositoryImpl(restClient: i()))
+        Bind.lazySingleton<InformationFormRepository>(
+            (i) => InformationFormRepositoryImpl(restClient: i())),
+        Bind.lazySingleton(
+            (i) => SelfServiceController(informationFormRepository: i())),
+        Bind.lazySingleton<PatientsRepository>(
+            (i) => PatientsRepositoryImpl(restClient: i()))
       ];
 
   @override
@@ -31,6 +38,6 @@ class SelfServiceModule extends FlutterGetItModule {
         '/documents/scan': (context) => const DocumentsScanPage(),
         '/documents/scan/confirm': (context) =>
             const DocumentsScanConfirmRouter(),
-        '/done': (context) => const DonePage(),
+        '/done': (context) => DonePage(),
       };
 }
