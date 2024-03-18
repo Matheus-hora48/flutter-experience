@@ -31,14 +31,14 @@ mixin MessageStateMixin {
   String? get erroMessage => _erroMessage();
 
   final Signal<String?> _infoMessage = signal(null);
-  String? get infoMessage => _erroMessage();
+  String? get infoMessage => _infoMessage();
 
   final Signal<String?> _successMessage = signal(null);
-  String? get successMessage => _erroMessage();
+  String? get successMessage => _successMessage();
 
   void clearError() => _erroMessage.value = null;
-  void clearInfo() => _erroMessage.value = null;
-  void clearSuccess() => _erroMessage.value = null;
+  void clearInfo() => _infoMessage.value = null;
+  void clearSuccess() => _successMessage.value = null;
 
   void showError(String message) {
     untracked(() => clearError());
