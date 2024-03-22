@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_getit/flutter_getit.dart';
 import 'package:lab_clinicas_core/lab_clinicas_core.dart';
-import 'package:lab_clinicas_self_service/src/module/self_service/done/done_page.dart';
 import 'package:lab_clinicas_self_service/src/module/self_service/self_service_controller.dart';
 import 'package:signals_flutter/signals_flutter.dart';
 
