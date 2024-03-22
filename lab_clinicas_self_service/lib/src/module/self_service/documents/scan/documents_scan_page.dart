@@ -26,6 +26,7 @@ class _DocumentsScanPageState extends State<DocumentsScanPage> {
 
   @override
   Widget build(BuildContext context) {
+    
     final sizeOf = MediaQuery.sizeOf(context);
     return Scaffold(
       appBar: LabClinicasAppBar(),
