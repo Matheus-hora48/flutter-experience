@@ -192,7 +192,7 @@ class _CheckinPageState extends State<CheckinPage> with MessageViewMixin {
                   height: 48,
                   child: ElevatedButton(
                     onPressed: () {
-                      controller.endProcess();
+                      controller.endCheckin();
                     },
                     child: const Text('FINALIZAR ATENDIMENTO'),
                   ),
