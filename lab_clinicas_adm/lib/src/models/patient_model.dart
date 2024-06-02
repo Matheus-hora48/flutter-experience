@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:lab_clinicas_adm/src/models/patient_address_model.dart';
 
 part 'patient_model.g.dart';
 
@@ -21,7 +22,7 @@ class PatientModel {
   @JsonKey(name: 'phone_number')
   String phoneNumber;
   String document;
-  PatientModel address;
+  PatientAddressModel address;
   @JsonKey(defaultValue: '')
   String guardian;
   @JsonKey(name: 'guardian_indentification_number', defaultValue: '')
