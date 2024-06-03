@@ -149,7 +149,7 @@ class _PreCheckinPageState extends State<PreCheckinPage> with MessageViewMixin {
                         onPressed: () {
                           Navigator.of(context).pushReplacementNamed(
                             '/checkin',
-                            arguments: controller.informationForm,
+                            arguments: controller.informationForm.value,
                           );
                         },
                         child: const Text('ATENDER'),
